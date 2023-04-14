@@ -1,13 +1,10 @@
-import Button from './Button';
+import CartButton from './CartButton';
 import { CartContext } from '../CartContext';
 import { useContext } from 'react';
 
 function ProductCard(props) {
   const cart = useContext(CartContext);
   const productQuantity = cart.getProductQuantity(props.id);
-  console.log(cart.items)
-
-  
 
   return (
     <div className='flex flex-col px-2 sm:px-4'>
@@ -32,14 +29,8 @@ function ProductCard(props) {
         </div>
         </>
         :
-        <button 
-        className='text-[10px] xs:text-[14px] mt-auto border-primary border-2 my-3 w-[100%] text-center hover:bg-accentCream inline-block py-2 px-4 xs:py-4 xs:px-6 font-Nunito font-bold text-primary outline-none rounded-full uppercase hover:ease-in duration-200'
-        onClick={() => cart.addOneToCart(props.id)}
-        >
-          Add to Cart
-        </button> 
+        <CartButton onClick={() => cart.addOneToCart(props.id)}/>
         }
-
 
     </div>
   )

@@ -6,9 +6,6 @@ module.exports = {
   mode: "jit",
   theme: {
     extend: {
-      backgroundImage: {
-        'hero': "hero"
-      },
       colors: {
         primary: "#224229",
         secondary: "#fcf9f6",

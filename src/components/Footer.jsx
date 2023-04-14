@@ -56,11 +56,11 @@ function Footer() {
           </ul>
    
           <ul className='flex flex-row'>
-            <li className='mr-4'><a href=""><i class="text-2xl fa-brands fa-instagram"></i></a></li>
-            <li className='mr-4'><a href=""><i class="fa-brands fa-facebook text-2xl"></i></a></li>
-            <li className='mr-4'><a href=""><i class="fa-brands fa-twitter text-2xl"></i></a></li>
-            <li className='mr-4'><a href=""><i class="fa-brands fa-pinterest text-2xl"></i></a></li>
-            <li className=''><a href=""><i class="fa-brands fa-tiktok text-2xl"></i></a></li>
+            <li className='mr-4'><a href=""><i className="text-2xl fa-brands fa-instagram"></i></a></li>
+            <li className='mr-4'><a href=""><i className="fa-brands fa-facebook text-2xl"></i></a></li>
+            <li className='mr-4'><a href=""><i className="fa-brands fa-twitter text-2xl"></i></a></li>
+            <li className='mr-4'><a href=""><i className="fa-brands fa-pinterest text-2xl"></i></a></li>
+            <li className=''><a href=""><i className="fa-brands fa-tiktok text-2xl"></i></a></li>
           </ul>
         
 

@@ -11,7 +11,7 @@ function CartItem(props) {
     const productData = getProductData(id);
 
     return (
-        <div className='my-0 mx-4 border-t-[1px] py-3 border-t-secondaryOpac grid gap-3 grid-rows-1 grid-cols-5 xs:grid-cols-4 font-Nunito tracking-wide'>
+        <div className=' my-0 mx-4 border-t-[1px] py-3 border-t-secondaryOpac grid gap-3 grid-rows-1 grid-cols-5 xs:grid-cols-4 font-Nunito tracking-wide'>
             <a href="/shop" id="image-container" className="col-span-2 xs:col-span-1">
                 <img 
                 src={productData.image} 

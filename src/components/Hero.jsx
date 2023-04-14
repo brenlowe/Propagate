@@ -12,6 +12,9 @@ import {
 } from "../assets/index";
 
 function Hero() {
+
+  const images = [logoAd, logoAt, logoGardenista, logoGh, logoMindbody, logoRefinery, logoTheSpruce, logoWellgood]
+
   return (
     <section>
       {/* Hero Image + Overlay  */}
@@ -39,30 +42,13 @@ function Hero() {
           AS SEEN IN
         </h4>
         <div className="grid grid-cols-2 grid-rows-4 sm:grid-cols-4 sm:grid-rows-2">
-          <a href="/" className="flex justify-center p-2">
-            <img className="w-[160px]" src={logoAd} alt="" />
-          </a>
-          <a href="/" className="flex justify-center p-2">
-            <img className="w-[160px]" src={logoAt} alt="" />
-          </a>
-          <a href="/" className="flex justify-center p-2">
-            <img className="w-[160px]" src={logoGardenista} alt="" />
-          </a>
-          <a href="/" className="flex justify-center p-2">
-            <img className="w-[160px]" src={logoGh} alt="" />
-          </a>
-          <a href="/" className="flex justify-center p-2">
-            <img className="w-[160px]" src={logoMindbody} alt="" />
-          </a>
-          <a href="/" className="flex justify-center p-2">
-            <img className="w-[160px]" src={logoRefinery} alt="" />
-          </a>
-          <a href="/" className="flex justify-center p-2">
-            <img className="w-[160px]" src={logoTheSpruce} alt="" />
-          </a>
-          <a href="/" className="flex justify-center p-2">
-            <img className="w-[160px]" src={logoWellgood} alt="" />
-          </a>
+
+         {images.map((image, index) => (
+            <a key={index} href="/" className="flex justify-center p-2">
+              <img className="w-[160px]" src={image} alt="" />
+            </a>
+         ))}
+
         </div>
       </div>
     </section>

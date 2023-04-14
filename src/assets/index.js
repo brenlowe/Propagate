@@ -16,13 +16,16 @@ import logoMindbody from './logo-mindbody.png';
 import logoRefinery from './logo-refinery.png';
 import logoTheSpruce from './logo-thespruce.png';
 import logoWellgood from './logo-wellgood.png';
-import blogImg1 from './blog-img-1.jpg';
+import blogImg1 from './blogImg1.jpg';
+import blogImg2 from './blogImg2.jpg';
+import blogImg3 from './blogImg3.jpg';
+import blogImg4 from './blogImg4.jpg';
+import blogImg5 from './blogImg5.jpg';
 import imgCat1 from './category-1.jpg'
 import imgCat2 from './category-2.jpg'
 import imgCat3 from './category-3.jpg'
 import imgCat4 from './category-4.jpg'
 import heroGift from './hero-gift.jpg'
-
 import gifts50 from './gifts-50.jpg'
 import gifts100 from './gifts-100.jpg'
 import anniversary from './gifts-anniversary.jpg'
@@ -32,7 +35,11 @@ import housewarming from './gifts-housewarming.jpg'
 
 export {
     calathea,
+    blogImg2,
     gifts50,
+    blogImg3,
+    blogImg4,
+    blogImg5,
     gifts100,
     anniversary,
     birthday,

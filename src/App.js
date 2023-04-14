@@ -1,10 +1,11 @@
 import { Navbar, Footer } from './components';
-import Home from './pages/Home';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Home from './pages/Home';
 import Shop from './pages/Shop';
 import SignUp from './pages/SignUp';
 import CartProvider from './CartContext';
 import Gifts from './pages/Gifts';
+import Learn from './pages/Learn';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
               <Route exact path='/shop' element={<Shop />} />
               <Route exact path='/signup' element={<SignUp />} />
               <Route exact path='/gifts' element={<Gifts />} />
+              <Route exact path='/learn' element={<Learn />} />
             </Routes>
           </div>
           <Footer />
