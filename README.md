@@ -1,7 +1,8 @@
-E-Commerce Project Site Built with React
+# E-Commerce Project Site Built with React
 
-Technologies used: HTML, CSS, JS, React, React Router.
+Technologies used: HTML, TailWind CSS, JS, React, React Router.
 
-I wanted to challenge myself into creating something from a simple visual mockup and add functionality to create a functional website.
+This is a functional multi-page website with a working shopping cart, products, and components.
+I wanted to challenge myself into creating a mockup of something from scratch using a different workflow than I'm used to. Inspiration for the site design comes from https://bloomscape.com/.
 
-Link to Site: https://propagate.netlify.app/
+### Link to Site: https://propagate.netlify.app/
