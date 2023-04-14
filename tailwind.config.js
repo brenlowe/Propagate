@@ -12,6 +12,8 @@ module.exports = {
       colors: {
         primary: "#224229",
         secondary: "#fcf9f6",
+        secondaryOpac: "#fcf9f655",
+        lightGray: "#fcf9f3b3",
         accentPeach: "#f6cfb2",
         accentCream: "#f8f1e3",
         bodyColor: "#f8f3e7"

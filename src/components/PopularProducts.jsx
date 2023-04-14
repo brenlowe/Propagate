@@ -28,6 +28,8 @@ function PopularProducts() {
 
     const product = productData.map((item) => 
         <ProductCard
+            key={item.id}
+            id={item.id}
             name={item.name}
             image={item.image}
             description={item.description}
@@ -39,7 +41,7 @@ function PopularProducts() {
     return (
         <section className={`${styles.sectionContainer} z-1`}>
             <h2 className={`${styles.sectionHeading} mb-0`}>Our Best Sellers</h2>
-            <a href="/"><h4 className='text-right px-2 font-Gelasio underline font-medium text-[24px] mb-4 hover:text-[green]'>Shop All</h4></a>
+            <a href="/shop"><h4 className='text-right px-2 font-Gelasio underline font-medium text-[24px] mb-4 hover:text-[green]'>Shop All</h4></a>
             <Carousel draggable={true} responsive={responsive}>
                 {product}
             </Carousel>

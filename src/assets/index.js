@@ -1,5 +1,5 @@
 import cacti from './cacti.jpg';
-import calathea from  './calathea.jpg';
+import calathea from './calathea.jpg';
 import monstera from './monstera.jpg';
 import ficus from './ficus.jpg';
 import philodendron from './philodendron.jpg';
@@ -21,9 +21,23 @@ import imgCat1 from './category-1.jpg'
 import imgCat2 from './category-2.jpg'
 import imgCat3 from './category-3.jpg'
 import imgCat4 from './category-4.jpg'
+import heroGift from './hero-gift.jpg'
+
+import gifts50 from './gifts-50.jpg'
+import gifts100 from './gifts-100.jpg'
+import anniversary from './gifts-anniversary.jpg'
+import birthday from './gifts-birthday.jpg'
+import giftsRare from './gifts-rare.jpg'
+import housewarming from './gifts-housewarming.jpg'
 
 export {
     calathea,
+    gifts50,
+    gifts100,
+    anniversary,
+    birthday,
+    giftsRare,
+    housewarming,
     cacti,
     ficus,
     monstera,
@@ -46,4 +60,5 @@ export {
     imgCat2,
     imgCat3,
     imgCat4,
+    heroGift,
 }

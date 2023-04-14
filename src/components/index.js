@@ -1,5 +1,4 @@
 import Navbar from './Navbar';
-import SidebarMenu from './SidebarMenu';
 import Hero from './Hero';
 import Button from './Button';
 import PopularProducts from './PopularProducts';
@@ -10,7 +9,6 @@ import Categories from './Categories';
 import Footer from './Footer';
 
 export {
-    SidebarMenu,
     Navbar,
     Hero,
     Button,

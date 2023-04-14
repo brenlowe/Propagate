@@ -29,6 +29,7 @@ function Hero() {
         <Button
           buttonText="Shop New Arrivals"
           styles="bg-accentPeach w-[200px]"
+          linkTo="/shop"
         />
       </div>
       

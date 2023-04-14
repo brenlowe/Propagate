@@ -6,4 +6,4 @@ function Hrule() {
   )
 }
 
-export default Hrule
+export default Hrule;

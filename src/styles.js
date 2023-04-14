@@ -1,6 +1,4 @@
 const styles = {
-    sectionHeading: "font-Gelasio font-semibold xs:text-[48px] text-[40px] text-white xs:leading-[76.8px] leading-[66.8px] w-full",
-
     flexCenter: "flex justify-center items-center",
     flexStart: "flex justify-center items-start",
     flexBetween: "flex justify-between items-center",
@@ -13,15 +11,18 @@ const styles = {
     overflowHidden: "overflow-hidden",
 
     sectionContainer: "text-primary sm:my-[56px] my-[40px] sm:px-[64px] px-[24px]",
-    sectionHeading: "mb-6 leading-snug text-[32px] font-Gelasio",
-    gridContainer: "",
+    sectionHeading: "font-Gelasio font-medium leading-snug w-full mb-3 text-[32px]",
 
-
+    bannerOverlay: "flex flex-col justify-center items-center top-[250px] left-0 right-0 ml-auto mr-auto sm:w-[700px] w-[300px] z-1 absolute",
+    bannerText: "text-accentCream font-Gelasio font-bold text-[42px] py-5 sm:text-5xl text-center mb-3",
     // Nav 
     navLink: "mr-6 tracking-wide uppercase text-sm font-extrabold font-Nunito transition hover:border-b-2 hover:border-primary hover:border-solid",
 
     //Footer Heading
-    footerHeading: "font-Archivo tracking-wider text-xs font-semibold text-[#fcf9f6b8] uppercase my-4"
+    footerHeading: "font-Archivo tracking-wider text-xs font-semibold text-[#fcf9f6b8] uppercase my-4",
+
+    //Cart Footer Styles
+    cartFooter: "text-center font-Nunito font-bold bg-primary border-t-2 border-t-secondary mx-4 py-4 absolute bottom-0 right-0 left-0 flex justify-between flex-col gap-2",
 
 };
 

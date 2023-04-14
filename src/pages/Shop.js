@@ -1,7 +1,20 @@
-import { Hero, BlogFeature, Hrule } from '../components'
+import { ProductCard, BlogFeature, Hrule } from '../components'
 import styles from '../styles';
+import { productData } from '../productData';
 
 function Shop() {
+
+  const product = productData.map((item) =>
+    <ProductCard
+      key={item.id}
+      id={item.id}
+      name={item.name}
+      image={item.image}
+      description={item.description}
+      price={item.price}
+    />
+  );
+
   return (
     <section>
       <div>
@@ -10,15 +23,18 @@ function Shop() {
         </div>
 
         <div id="shop-content" className={`${styles.sectionContainer} flex flex-row`}>
-          <aside className='w-[25%] h-[100vh] uppercase text-primary text-[14px] font-bold font-Nunito'>
+          <aside className='sticky top-2 w-[30%] h-[100vh] uppercase text-primary text-[14px] font-bold font-Nunito mr-4 hidden sm:block'>
             <ul>
-              <li className='cursor-pointer py-[12px] border-y-[1px] border-y-[rgba(34,66,41,.16)] border-solid'>Indoor Light</li>
+              <li className='cursor-pointer py-[12px] border-y-[1px] border-y-[rgba(34,66,41,.16)] border-solid flex justify-between items-center'>Indoor Light</li>
               <li className='cursor-pointer py-[12px] border-b-[1px] border-b-[rgba(34,66,41,.16)] border-solid'>Plant Size</li>
               <li className='cursor-pointer py-[12px] border-b-[1px] border-b-[rgba(34,66,41,.16)] border-solid'>Price</li>
             </ul>
           </aside>
-        </div>
 
+          <div id='shop-grid' className='grid md:grid-rows-2 sm:grid-rows-3 grid-cols-2 md:grid-cols-3 md:max-w-[80%] gap-y-6 gap-x-2 m-auto'>
+            {product}
+          </div>
+        </div>
       </div>
 
       <Hrule />

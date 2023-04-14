@@ -1,13 +1,32 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { CartContext } from "../CartContext";
 import styles from "../styles";
-import Button from "./Button"
-
+import Button from "./Button";
+import CartItem from "./CartItem";
+import DropdownMenu from "./DropDown";
 
 function Navbar() {
+  const navLinks = [
+    {
+    title: "Shop Plants",
+    link: "/shop"
+    },
+    {
+      title: "Gifts",
+      link: "/gifts"
+    },
+    // {
+    //   title: "Learn",
+    //   link: "/learn"
+    // }
+  ]
+
+  const cart = useContext(CartContext);
+  const productsCount = cart.items.reduce((sum, product) => sum + product.quantity, 0);
   // Handle Menu open/close
   const [sidebar, setSidebar] = useState(false);
   const handleClick = () => setSidebar(!sidebar);
-
+  // Handle Shopping Cart open/close
   const [modal, setModal] = useState(false);
   const toggleModal = () => setModal(!modal);
 
@@ -19,22 +38,23 @@ function Navbar() {
   };
 
 
+
   // Sidebar Menu Styles
   const sidebarStyles =
-    "sm:hidden bg-primary absolute top-0 w-[100%] xs:w-[350px] h-[1000px] z-20 px-10 py-4 duration-500 ease-in-out";
+    "sm:hidden bg-primary absolute top-0 w-[100%] xs:w-[350px] h-[1000px] z-[999] px-10 py-4 duration-500 ease-in-out";
   const activeStyles = "left-0 duration-400 ease-in-out";
 
   return (
     <>
     <nav className={`flex justify-between items-center px-10 py-4 text-primary bg-secondary z-[1000]`}>
-      {/* Overlay */}
+{/* Overlay */}
       <div
         onClick={handleClick}
         id="overlay"
         className={`${sidebar ? undefined : "hidden" } ${styles.overlay}`}
       />
 
-    {/* Mobile Menu */}
+{/* Mobile Menu */}
       <div
         className={`${sidebarStyles}
         ${sidebar ? activeStyles : "-left-[100%]"}`}
@@ -46,16 +66,16 @@ function Navbar() {
               className={`cursor-pointer fa-solid text-2xl fa-xmark`}
             ></i>
           </li>
-          <li><a href="/shop">Plants</a></li>
-          <li><a href="/">Care Tools</a></li>
-          <li><a href="/">Gifts</a></li>
-          <li><a href="/">Learn</a></li>
-          <li><a href="/">Help & FAQs</a></li>
-          <li><a href="/">Login / Sign Up</a></li>
+
+          {navLinks.map((linkItem) => (
+            <li><a href={linkItem.link}>{linkItem.title}</a></li>
+          ))}
+        
+          <li><a href="/signup">Login / Sign Up</a></li>
         </ul>
       </div>
 
-      {/* Desktop Menu  */}
+{/* Desktop Menu  */}
       <div
         id="hamburger-menu"
         className="sm:hidden mr-auto cursor-pointer"
@@ -72,39 +92,31 @@ function Navbar() {
       </div>
 
       <div className="hidden sm:block" id="nav-links">
-        <ul className={`flex flex-row`}>
+        <ul className={`flex flex-row`}>  
+        {navLinks.map((linkItem) => (
           <li>
-            <a className={styles.navLink} href="/shop">
-              Plants <i class="ml-1 fa-solid fa-chevron-down"></i>
+            <a className={styles.navLink} href={linkItem.link}>
+              {linkItem.title}
             </a>
           </li>
-          <li>
-            <a className={styles.navLink} href="/care">
-              Care Tools <i class="fa-solid fa-chevron-down"></i>
-            </a>
-          </li>
-          <li>
-            <a className={styles.navLink} href="/shop">
-              Gifts <i class="fa-solid fa-chevron-down"></i>
-            </a>
-          </li>
-          <li>
-            <a className={styles.navLink} href="/blog">
-              Learn <i class="fa-solid fa-chevron-down"></i>
-            </a>
-          </li>
+        ))}
         </ul>
       </div>
 
       <div className="sm:ml-0 ml-auto" id="nav-links-other">
         <ul className="flex flex-row">
-          <li className="mr-6 text-xl cursor-pointer hidden sm:block">
+          {/* <li className="mr-6 text-xl cursor-pointer hidden sm:block">
             <i class="fa-solid fa-magnifying-glass"></i>
-          </li>
+          </li> */}
           <li className="mr-6 text-xl cursor-pointer hidden sm:block">
             <a href="/signup"><i class="fa-regular fa-user"></i></a>
           </li>
           <li className="text-xl cursor-pointer">
+            {productsCount > 0 ? 
+            <span className="absolute right-[32px] top-[14px] text-[60%] bg-secondary rounded-full border-2 border-primary leading-3 py-[2px] px-[4px]">
+              {productsCount}
+            </span> 
+            : undefined}
             <i class="fa-solid fa-cart-shopping"
             onClick={toggleModal}></i>
           </li>
@@ -112,11 +124,13 @@ function Navbar() {
       </div>
     </nav>
 
-    {/* Shopping Cart */}
+{/* Shopping Cart Modal */}
     <div 
     onClick={toggleModal} 
     className={modal ? styles.overlay : undefined} />
-      <div id='cart-window' className={`text-secondary tracking-tight font-Gelasio w-[400px] h-[100vh] bg-primary fixed z-[999] top-0 duration-500 ease-in-out  ${modal ? "right-0" : "-right-[100%]"}`}>
+      <div id='cart-window' className={`text-secondary tracking-tight font-Gelasio w-[100vw] xs:w-[400px] h-[100%] bg-primary fixed z-[999] top-0 duration-500 ease-in-out  ${modal ? "right-0" : "-right-[100%]"}`}>
+
+{/* Cart Header  */}
         <div id='cart-header' className='flex justify-between p-5'>
           <h2 className='font-semibold text-2xl'>Your Cart</h2>
           <button
@@ -125,14 +139,45 @@ function Navbar() {
               <i className="fa fa-close"></i>
           </button>
         </div>
-        <div id='cart-content' className='text-center py-4'>
-          <p className='font-semibold text-2xl mb-4'>Oh no! Your cart is empty</p>
-          <Button 
-          styles='bg-secondary px-12'
-          buttonText='Shop'
-          />
+
+{/* Cart Body  */}
+        <div id='cart-body' className='flex flex-col h-auto text-center py-4'>
+          {productsCount > 0 
+          ?
+            <>
+              {cart.items.map((currentProduct, index) => (
+                <CartItem id={currentProduct.id} quantity={currentProduct.quantity}/>
+              ))}
+            </>
+          :
+          <p className='font-semibold text-2xl mb-4'>Your cart is empty</p>
+          }
+          </div>
+
+{/* Cart Footer  */}
+          <div id='cart-footer' className={styles.cartFooter}>
+            <div className="flex justify-between">
+              <span>Subtotal:</span>
+              <span>${cart.getTotalCost().toFixed(2)}</span>
+            </div>
+            <p className='font-normal text-[14px] text-lightGray items-center'>Taxes calculated at checkout</p>
+            {productsCount > 0 
+            ?
+            <Button 
+            styles='bg-secondary px-12 w-[100%]'
+            buttonText='Checkout'
+            linkTo='/checkout'
+            />
+            :
+            <Button 
+            styles='bg-secondary px-12 w-[100%]'
+            buttonText='Shop'
+            linkTo='/shop'
+            />
+            }
+          </div>
         </div>
-      </div>
+      
   </>
   );
 }
