@@ -29,7 +29,9 @@ function ProductCard(props) {
         </div>
         </>
         :
-        <CartButton onClick={() => cart.addOneToCart(props.id)}/>
+        <CartButton 
+        buttonText="Add to Cart"
+        onClick={() => cart.addOneToCart(props.id)}/>
         }
 
     </div>

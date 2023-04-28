@@ -5,8 +5,8 @@ function BlogFeature({subtitle, title, content, image}) {
 
   return (
     <section className={`${styles.sectionContainer}`}>
-        <div className='flex flex-between flex-col sm:flex-row'>
-          <div className='sm:pr-5 pr-0 sm:pb-0 pb-10 text-primary'>
+        <div className='flex flex-between flex-col sm:flex-row '>
+          <div className='sm:pr-5 pr-0 sm:pb-0 pb-10 text-primary max-w-[45%]'>
             <h4 className='text-[14px] font-bold tracking-wider font-Nunito pb-2'>{subtitle}</h4>
             <h2 className={`${styles.sectionHeading}`}>{title}</h2>
             <p className='font-Gelasio leading-loose mb-5'>{content}</p>

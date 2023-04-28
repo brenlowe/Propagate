@@ -1,18 +1,20 @@
 import { calathea, ficus, monstera, philodendron, pilea, snakePlant, stringOfHearts, ZZ, cacti } from './assets'
 const productData = [
     {
-        id: 1,
+        id: "price_1MyGRyDfxdhpvEhVltIeLoF3",
         image: calathea,
         name: "Calathea Maui",
         price: 39,
         description: "This tropical indoor plant from Brazil requires little maintenance. Great for beginners."
+        // price_1MyGRyDfxdhpvEhVltIeLoF3
     },
     {
-        id: 2,
+        id: "price_1Mz0kfDfxdhpvEhVTh09CQ9U",
         image: ficus,
         name: "Ficus Elastica",
         price: 29,
         description: "Perfect for bringing color and life to entry areas, empty corners and mixed plant groupings."
+        // price_1Mz0kfDfxdhpvEhVTh09CQ9U
     },
     {
         id: 3,

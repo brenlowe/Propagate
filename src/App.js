@@ -6,6 +6,8 @@ import SignUp from './pages/SignUp';
 import CartProvider from './CartContext';
 import Gifts from './pages/Gifts';
 import Learn from './pages/Learn';
+import Success from './pages/Success'
+import Cancel from './pages/Cancel'
 
 function App() {
   return (
@@ -20,6 +22,8 @@ function App() {
               <Route exact path='/signup' element={<SignUp />} />
               <Route exact path='/gifts' element={<Gifts />} />
               <Route exact path='/learn' element={<Learn />} />
+              <Route exact path='/success' element={<Success />} />
+              <Route exact path='/cancel' element={<Cancel />} />
             </Routes>
           </div>
           <Footer />

@@ -1,6 +1,7 @@
 import { ProductCard, BlogFeature, Hrule } from '../components'
 import styles from '../styles';
 import { productData } from '../productData';
+import { blogImg4 } from '../assets';
 
 function Shop() {
 
@@ -36,9 +37,14 @@ function Shop() {
           </div>
         </div>
       </div>
+      
 
       <Hrule />
-      <BlogFeature />
+      <BlogFeature 
+      subtitle='Plant Care'
+      title='3 of the Easiest Houseplants That Anyone Can Grow'
+      content='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates maiores fugit harum asperiores dolores quis aliquid tenetur recusandae necessitatibus suscipit.'
+      image={blogImg4}/>
     </section>
   )
 }
