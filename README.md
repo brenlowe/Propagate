@@ -1,10 +1,8 @@
-### E-Commerce Project Site Built with React
-# Propagate
+#### Technologies used: React, TailWind, JS, React, React Router
+# Propagate Site
+### Multi-page site with custom modals, shopping cart and product functionality.
 
-- Technologies used: HTML, TailWind CSS, JS, React, React Router.
+This is an custom website clone based on Bloomscapes website as my muse (https://bloomscape.com). 
+I wanted to recreate a website using modern React workflows while learning Tailwind and using minimal custom css. I created my own custom components and modals while learning how to manipulate React Hooks and useState to produce functionality.
 
-This is a full CRUD multi-page website with a working shopping cart, products, and components.
-I wanted to challenge myself into creating a mockup of something from scratch using common React workflows while learning and utilizing Tailwind. 
-
-Inspiration for the site design comes from https://bloomscape.com/.
-#### Link to app: https://propagate.netlify.app/
+#### Link to app: https://propagate.netlify.app
